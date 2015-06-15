@@ -1,0 +1,19 @@
+<h1>Ajax Testing 1, 2, 3</h1>
+
+<script type="text/javascript">
+    function loadPosts(){
+        $.getJSON("/posts.json", function(data){
+            var html = "";
+            $.each(data, function (index){
+                // alert(data[index].content);
+                html += "<b><i>" + data[index].content + "</i></b><br>";
+            });
+            // update our div
+            $("#posts").html(html);
+        });
+    }
+</script>
+
+<div id="posts">
+    <a href="javascript:loadPosts();">This is where blog posts go</a>
+</div>

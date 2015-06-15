@@ -1,0 +1,16 @@
+body {
+  width: 900px;
+  margin: auto;
+  background-color: #87CEEB;
+}
+
+p {
+  color: #00CED1;
+  text-align: left;
+}
+
+#heading{
+    color: red;
+    text-align: center;
+
+}

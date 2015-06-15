@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+  <title>Project</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar">
+            <div class="container">
+                <a href="#" class="brand"><strong> Kelly's 1st Project</strong></a>
+                
+                <ul class="nav">
+                    <li><%=link_to "All Statuses", statuses_path %> </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+                                  
+        <h1></h1><br>
+
+        <%= yield %><br>
+  
+<blockquote>        
+    <address><br>
+        <strong>Kelly M Curtis</strong><br>
+        Cary, NC  27518<br>
+        <abbr title="Phone">P:</abbr> (919) 000-0000
+    </address></blockquote>
+
+    <blockquote><address>
+        <strong>Full Name</strong><br>
+        <a href="mailto:#">kmcmcurtis7@gmail.com</a>
+        </address>
+</blockquote>
+        
+</body>
+</html>

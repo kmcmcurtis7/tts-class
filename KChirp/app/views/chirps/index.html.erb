@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Current Chirps</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Message</th>
+            <th>User</th>
+            <th colspan="5"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @chirps.each do |chirp| %>
+        <tr class="well well-lg">
+            <td><%= chirp.message %></td>
+
+            <td><%= link_to chirp.user.username, user_profile_path(id: chirp.user.id) %>
+            </td>
+
+            <td><%= link_to 'Show', chirp, class: "btn btn-info" %></td>
+            <td><%= link_to 'Edit', edit_chirp_path(chirp), class:"btn btn-warning" %></td>
+            <td><%= link_to 'Destroy', chirp, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Chirp', new_chirp_path, class: "btn btn-info" %>

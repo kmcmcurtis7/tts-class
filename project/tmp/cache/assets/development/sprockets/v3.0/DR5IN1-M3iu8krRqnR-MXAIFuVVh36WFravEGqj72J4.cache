@@ -1,0 +1,10 @@
+I"¾(function() {
+  $(function() {
+    return $('.status').hover(function(event) {
+      console.log("Hover triggered");
+      return $(this).toggleClass("hover");
+    });
+  });
+
+}).call(this);
+:ET

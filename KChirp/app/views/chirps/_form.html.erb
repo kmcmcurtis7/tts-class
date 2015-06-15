@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+<%= form_for(@chirp) do |f| %>
+  <% if @chirp.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@chirp.errors.count, "error") %> prohibited this chirp from being saved:</h2>
+
+      <ul>
+      <% @chirp.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+      <%= f.text_field :message, placeholder: "What's happening?" %>
+  </div>
+
+  <div class="field cant-see-me">
+      <%= f.label :user_id %><br>
+      <%= f.number_field :user_id, value: current_user.id %>
+  </div>
+
+  <div class="actions">
+      <%= f.submit "Chirp!", class: "btn btn-success btn-lg" %>
+  </div>
+<% end %>
+
+    </div>
+</div>

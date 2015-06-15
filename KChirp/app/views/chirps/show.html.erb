@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+    <strong>Message:</strong>
+    <%= @chirp.message %>
+</p>
+
+<p>
+    <strong>User:</strong>
+    <%= link_to @chirp.user.username, user_profile_path(id: @chirp.user.id) %>
+</p>
+
+<%= link_to 'Edit', edit_chirp_path(@chirp), class: "btn btn-warning btn-sm" %> |
+<%= link_to 'Back', chirps_path, class: "btn btn-info btn-sm" %>

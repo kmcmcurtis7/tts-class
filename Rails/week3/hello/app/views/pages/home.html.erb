@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello!!</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<center><h1>Good Morning!</h1><center>
+
+<p>Today is <%= Date.today %>. Week 3 of TTS Coding Immersion.</p>
+
+<p>We are having our Citrix tour today after lunch. Woohoo!</p>
+
+<h3><em> <%= @message %></em></h3>
+<!-- @message is pulling from the pages_controller.rb file where we created the @message variable. -->
+
+<%= yield %>
+
+</body>
+</html>

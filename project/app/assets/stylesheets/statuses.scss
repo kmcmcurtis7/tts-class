@@ -1,0 +1,27 @@
+// Place all the styles related to the statuses controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.status {
+    border-bottom: solid 1px #CCC;
+    padding: 5px 0;
+    // On the above line, the 5px is for the top & bottom of the border. The 0 is for the left & right sides of the border.
+        
+.status p {
+    margin: 4px 0;}
+//Adding this to override the default that Bootstrap uses.
+
+}
+
+.status.hover {
+    background: #87CEFA;
+}
+
+.status .admin {
+    display: none;
+}
+
+.status.hover .admin {
+// This rule will override the display: none rule above when someone is hovering over the status
+    display: inline;
+}

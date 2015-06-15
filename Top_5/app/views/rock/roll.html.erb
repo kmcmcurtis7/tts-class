@@ -1,0 +1,16 @@
+<div class="row">
+    <h3> My Top Songs </h3>
+    <% @songs.each do |song| %>
+    <div class="well well-sm">
+        <% if song.artist.avatar.exists? != nil %>
+        <%= image_tag song.artist.avatar.url(:thumb) %>
+        <% end %>
+        <h4><%= song.name %></h4>
+        <h5>by <%= song.artist.name %> </h5>
+        <p><% "#{song.rating}".to_i.times do |rank| %>
+            <span class="glyphicon glyphicon-sunglasses"></span>
+            <% end %>
+        </p>
+    </div>
+    <% end %>
+</div>

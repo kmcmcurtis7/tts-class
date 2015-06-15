@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Top Music</title>
+
+        <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" %>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <%= javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js" %>
+        <%= csrf_meta_tags %>
+    </head>
+    <body>
+        <div class="site-wrapper">
+            <div class="site-wrapper-inner">
+                <div class="cover-container">
+                    <div class="masthead clearfix">
+                        <div class="inner">
+                            <h1 class="masthead-brand"><%= image_tag "" %> Kelly's Music <%= image_tag "" %></h1>
+                            <nav>
+                                <ul class="nav masthead-nav">
+                                    <li><%= link_to "Top 5", root_path %></li>
+                                    <li><%= link_to "Artists", artists_path %></li>
+                                    <li><%= link_to "Songs", songs_path %></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="inner cover">
+                        <%= yield %>
+                    </div>
+                    <div class="mastfoot">
+                        <div class="inner">
+                            <p>Top Running Music for 2015</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

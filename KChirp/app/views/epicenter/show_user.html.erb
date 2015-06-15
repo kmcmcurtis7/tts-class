@@ -1,0 +1,51 @@
+<h1><%= @user.username %></h1>
+<h3><%= @user.location %></h3>
+<h3><%= @user.bio %></h3>
+
+<div class="row">
+    <% @user.chirps.each do |chirp| %>
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p><%= chirp.message %></p>
+            </div>
+        </div>
+    </div>
+    <% end %>
+</div>
+
+<div>
+    <% if current_user.id != @user.id %>
+    <% if current_user.following.include?(@user.id) %>
+    <%= form_tag('/unfollow') do %>
+    <div class="invisible">
+        <%= number_field_tag :unfollow_id, @user.id %>
+    </div>
+    <%= submit_tag 'Unfollow', class: 'btn btn-danger', id: 'unfollow_btn' %>
+    <% end %>
+    <% else %>
+</div>
+
+<%= form_tag('/now_following') do %>
+<span class="invisible">
+    <%= number_field_tag :follow_id, @user.id %>
+</span><br />
+<%= submit_tag 'Follow', class: 'btn btn-info', id: 'follow_btn' %>
+<% end %>
+</div>
+<% end %>
+
+<!--
+<script>
+    $(document).ready(function(){
+        $(this).removeClass("btn-primary");
+        $(this).addClass("btn-danger");
+        $(this).attr('value', 'Following');
+    }, function(){
+        $(this).attr('value, 'Following');
+                     $(this).removeClass("btn-danger"),
+            $(this).addClass("btn-primary");
+    });
+    });
+</script>
+-->

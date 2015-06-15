@@ -1,0 +1,9 @@
+body {
+  width: 900px;
+  margin: auto;
+}
+
+p {
+  color: green;
+  text-align: center;
+}

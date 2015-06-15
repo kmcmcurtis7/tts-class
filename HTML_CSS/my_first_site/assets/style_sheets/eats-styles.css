@@ -1,0 +1,14 @@
+body {
+  width: 900px;
+  margin: auto;
+}
+
+p {
+  color: #00CED1;
+  text-align: left;
+}
+
+#fav{
+    color: orange;
+
+}

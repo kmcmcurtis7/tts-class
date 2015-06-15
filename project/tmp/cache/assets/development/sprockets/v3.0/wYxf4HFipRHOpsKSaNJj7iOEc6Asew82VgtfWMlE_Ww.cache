@@ -1,0 +1,9 @@
+I"š(function() {
+  $(function() {
+    return $('.status').hover(function(event) {
+      return console.log("Hover triggered");
+    });
+  });
+
+}).call(this);
+:ET
