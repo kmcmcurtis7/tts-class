@@ -1,37 +1,37 @@
 <p id="notice"><%= notice %></p>
 
 <div class="panel panel-primary">
-	<div class="panel-heading">
-		<%=@blog_post.title %>
-	</div>
-	<div class="panel-body">
-		<strong>By: </strong><em><%=@blog_post.user.email%></em><span class="posted-at"><br><strong>Posted at: </strong><em><%= @blog_post.created_at.strftime('%D  %r  %Z') %></em></span><br><br>
+    <div class="panel-heading">
+        <%=@blog_post.title %>
+    </div>
+    <div class="panel-body">
+        <strong>By: </strong><em><%=@blog_post.user.email%></em><span class="posted-at"><br><strong>Posted at: </strong><em><%= @blog_post.created_at.strftime('%D  %r  %Z') %></em></span><br><br>
 
-		<p><%=@blog_post.blog_entry%></p>
-	</div>
+        <p><%=@blog_post.blog_entry%></p>
+    </div>
 </div>
 
 <div class="panel panel-success">
-	<div class="panel-heading">
-		<h5>Make a comment</h5>
-	</div>
-	<div class="panel-body">
-		<%= render 'comments/form'%>
-	</div>
+    <div class="panel-heading">
+        <h5>Make a comment</h5>
+    </div>
+    <div class="panel-body">
+        <%= render 'comments/form'%>
+    </div>
 </div>
 
 <div class="panel panel-default">
-		<div class="panel-header">
-			<h4>Comments</h4>
-	</div>
-	<% @blog_post.comments.each do |comment| %>
-	<div class="panel-body">
-		<p><strong><%= comment.user.email %></strong> said <%= time_ago_in_words(comment.created_at) %> ago: </p>
-		<p><%=comment.comment_entry %></p>
-	</div>
-	<% end %>
+        <div class="panel-header">
+            <h4>Comments</h4>
+    </div>
+    <% @blog_post.comments.each do |comment| %>
+    <div class="panel-body">
+        <p><strong><%= comment.user.email %></strong> said <%= time_ago_in_words(comment.created_at) %> ago: </p>
+        <p><%=comment.comment_entry %></p>
+    </div>
+    <% end %>
 <div>
-	<%= link_to 'Edit', edit_blog_post_path(@blog_post), class: "btn btn-warning btn-sm" %>
+    <%= link_to 'Edit', edit_blog_post_path(@blog_post), class: "btn btn-warning btn-sm" %>
 
-	<%= link_to 'Back', blog_posts_path(@blog_post), class: "btn btn-info btn-sm" %>
+    <%= link_to 'Back', blog_posts_path(@blog_post), class: "btn btn-info btn-sm" %>
 </div>

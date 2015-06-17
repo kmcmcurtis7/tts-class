@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <% @blog_post.comments.each do |comment| %>
-	<div class="panel_body">
-		<p><strong><%=comment.user.email %></strong> said: </p>
-		<p><%= comment.comment_entry %></p>
-		<p><span class="posted-at"><%= comment.created_at.strftime('%D  %r  %Z')%></span></p>
-	</div>
+    <div class="panel_body">
+        <p class="cant-see-me"><strong><%=comment.user.email %></strong></p> said:
+        <p><%= comment.comment_entry, :rows =>"20" %></p>
+        <p><span class="posted-at"><%= comment.created_at.strftime('%D  %r  %Z')%></span></p>
+    </div>
 <% end %>
 
 <%= link_to 'Edit', edit_comment_path(@comment) %> |

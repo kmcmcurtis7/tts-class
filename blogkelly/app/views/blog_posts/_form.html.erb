@@ -1,33 +1,33 @@
 <%= form_for(@blog_post) do |f| %>
 <% if @blog_post.errors.any? %>
 <div id="error_explanation">
-	<h2><%= pluralize(@blog_post.errors.count, "error") %> prohibited this blog_post from being saved:</h2>
+    <h2><%= pluralize(@blog_post.errors.count, "error") %> prohibited this blog_post from being saved:</h2>
 
-	<ul>
-		<% @blog_post.errors.full_messages.each do |message| %>
-		<li><%= message %></li>
-		<% end %>
-	</ul>
+    <ul>
+        <% @blog_post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+    </ul>
 </div>
 <% end %>
 
 <div class="form-group">
-	<%= f.text_field :title, class: "form-control", placeholder: "Post Title"%>
+    <%= f.text_field :title, class: "form-control", placeholder: "Post Title"%>
+</div>
+
+<div class="cant-see-me">
+    <%= f.text_field :author, class: "form-control", placeholder: "Author Name"%>
 </div>
 
 <div class="form-group">
-	<%= f.text_field :author, class: "form-control", placeholder: "Author Name"%>
-</div>
-
-<div class="form-group">
-	<%= f.text_field :blog_entry, class: "form-control", :rows => 20, placeholder: "Post"%>
+    <%= f.text_field :blog_entry, class: "form-control", :rows => 20, placeholder: "Post"%>
 </div>
 
 <div class="form-group cant-see-me">
-	<%= f.number_field :user_id, value: current_user.id %>
+    <%= f.number_field :user_id, value: current_user.id %>
 </div>
 
 <div class="actions">
-	<%= f.submit class: "btn btn-primary" %>
+    <%= f.submit class: "btn btn-primary" %>
 </div>
 <% end %>

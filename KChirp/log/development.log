@@ -11009,3 +11009,48 @@ Migrating to AddAvatarsToUsers (20150531045143)
             FROM sqlite_temp_master
             WHERE name='index_users_on_email' AND type='index'
 
+
+
+Started GET "/" for ::1 at 2015-06-17 12:58:53 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EpicenterController#feed as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 16ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2015-06-17 12:58:53 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (38.6ms)
+Completed 200 OK in 467ms (Views: 453.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-06-17 12:58:54 -0400
+Processing by EpicenterController#feed as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2015-06-17 12:58:54 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 48ms (Views: 47.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/epicenter.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-17 12:58:54 -0400
+
+
+Started GET "/assets/application.self-4d7b0610ba577119b2012855c66a3a90e851ba4ed885644bce08665918f93ad8.css?body=1" for ::1 at 2015-06-17 12:58:54 -0400
+
+
+Started GET "/assets/chirps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-17 12:58:54 -0400
+
+
+Started GET "/assets/chirps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-17 12:58:54 -0400
+
+
+Started GET "/assets/scaffolds.self-7c00537da98cbcfe37c82b21ed61c22bf0f56e793311228ea9dceb210a3d52cb.css?body=1" for ::1 at 2015-06-17 12:58:54 -0400
+
+
+Started GET "/assets/epicenter.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-17 12:58:54 -0400

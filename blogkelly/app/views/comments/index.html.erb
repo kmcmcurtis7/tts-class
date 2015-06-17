@@ -3,22 +3,22 @@
 <h1>Comments</h1>
 
 <table>
-	<thead>
-	<tr>
-		<th>Author</th>
-		<th>Comment entry</th>
-		<th colspan="3"></th>
-	</tr>
-	</thead>
+    <thead>
+    <tr>
+        <th class="cant-see-me">Author</th>
+        <th>Comment entry</th>
+        <th colspan="3"></th>
+    </tr>
+    </thead>
 
-	<tbody>
-	<% @comments.each do |comment| %>
-		<tr>
-			<td><%= comment.user.email %></td>
-		<td><%= comment.comment_entry %></td>
-		<td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-		<td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-		</tr>
-	<% end %>
-	</tbody>
+    <tbody>
+    <% @comments.each do |comment| %>
+        <tr>
+            <td class="cant-see-me"><%= comment.user.email %></td>
+        <td><%= comment.comment_entry %></td>
+        <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
+        <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+    <% end %>
+    </tbody>
 </table>

@@ -3,27 +3,27 @@
 <h1>Current Blog Posts</h1>
 
 <div class="row">
-	<% @blog_posts.each do |blog_post|%>
-		<div class="col-md-6" %>
-			<div class="panel panel-success">
-				<div class="panel-heading" >
-					<strong><%=link_to blog_post.title, blog_post %></strong>
-				</div>
-				<div class="panel-body">
-					<p>By <em><%= blog_post.user.email %></em></p>
-					<p><span class="posted-at">Posted at: <em><%= blog_post.created_at.strftime('%D %r %Z') %></em></span></p>
+    <% @blog_posts.each do |blog_post|%>
+        <div class="col-md-6" %>
+            <div class="panel panel-success">
+                <div class="panel-heading" >
+                    <strong><%=link_to blog_post.title, blog_post %></strong>
+                </div>
+                <div class="panel-body">
+                    <p>By <em><%= blog_post.user.email %></em></p>
+                    <p><span class="posted-at">Posted at: <em><%= blog_post.created_at.strftime('%D %r %Z') %></em></span></p>
 
-					<p><%= blog_post.blog_entry[0..250] %> ...[<%= link_to "READ MORE", blog_post %>]</p>
-				</div>
-				<div class="panel-footer">
-					<%= link_to 'Edit', edit_blog_post_path(blog_post), class: "btn btn-warning btn-sm" %>
-					<%= link_to 'Destroy', blog_post, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-danger btn-sm" %>
-				</div>
-		</div>
-	</div>
-	<% end %>
+                    <p><%= blog_post.blog_entry[0..250] %> ...[<%= link_to "READ MORE", blog_post %>]</p>
+                </div>
+                <div class="panel-footer">
+                    <%= link_to 'Edit', edit_blog_post_path(blog_post), class: "btn btn-warning btn-sm" %>
+                    <%= link_to 'Destroy', blog_post, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-danger btn-sm" %>
+                </div>
+        </div>
+    </div>
+    <% end %>
 
-	<br>
+    <br>
 </div>
 
 <%= link_to 'New Blog post', new_blog_post_path(@blog_post), class: "btn btn-default" %>
