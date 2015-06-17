@@ -1,0 +1,46 @@
+
+<h2><%= @destination.city %>, <%= @destination.country %></h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-default">
+             <div class="panel-body">
+                 <div class="text-align:center style">
+                <%= image_tag @destination.avatar.url, width: '400px', height: '400px',class: "img-responsive"  %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+          <div class="panel panel-default">
+              <div class="panel-body">
+                  <div class="text-align:center style">
+                    <div id="destination-map", width:'300px', height: '300px',class: "img-responsive">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-body">
+    <h5><em><%= @destination.address %></em></h5>
+
+    <p><%= @destination.latitude %>, <%= @destination.longitude %></p>
+
+    <h4>Population: <%= @destination.population %> million</h4>
+
+    <p><strong>Description: </strong> <%= @destination.description %></p>
+
+</div>
+
+<%= javascript_tag do %>
+    latitude = '<%= j @destination.latitude.to_s %>';
+    longitude = '<%= j @destination.longitude.to_s %>';
+    address = '<%= j @destination.address %>';
+    description = '<%= j @destination.description %>';
+<% end %>
+
+<div class="btn-group">
+  <%= link_to 'Edit', edit_destination_path(@destination), class: "btn btn-default" %>
+  <%= link_to 'Back', destinations_path, class: "btn btn-default" %>
+</div>

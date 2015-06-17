@@ -1,0 +1,44 @@
+<% if notice != nil%>
+<p id="notice" class="alert alert-danger alert-dismissible" role="alert">
+    <%= notice %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</p>
+<% end %>
+
+<h1>My Destinations Wish List</h1>
+
+<ul class="nav nav-pills" role="tablist">
+    <li><%= link_to "All", destinations_path %></li>
+    <% @my_countries.each do |c| %>
+    <li><%= link_to "#{c.country}", controller: "destinations", country: "#{c.country}" %></li>
+    <% end %>
+</ul>
+
+<div class="row">
+    <% @destinations.each do |destination| %>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h2><%= destination.city %></h2>
+                <h3><%= destination.country %></h3>
+                <% if destination.avatar_file_name != nil %>
+                <%= image_tag destination.avatar.url(:medium), class: "img-responsive" %>
+                <% else %>
+                <h1> </h1>
+                <% end %>
+                <p><strong>Population: </strong><%= destination.population %></p>
+                <p><strong>Description: </strong><%= destination.description[0..50] %> ...</p>
+
+                <div class="btn-group">
+                    <%= link_to 'More information', destination, class: "btn btn-info"%>
+
+                    <%= link_to 'Edit', edit_destination_path(destination), class: "btn btn-warning" %>
+                    <%= link_to 'Remove', destination, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% end %>
+</div>
+
+<%= link_to 'New Destination', new_destination_path, class: "btn btn-primary" %>

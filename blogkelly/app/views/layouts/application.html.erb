@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport">
 
-		<title>Kelly's Blog</title>
+<title>Kelly's Blog</title>
 
-		<%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" %>
-		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" %>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
-		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-		<%= javascript_include_tag "https://maxcdn.bootstrapcdm.com/bootstrap/3.3.2/js/bootstrap.min.js"%>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag "https://maxcdn.bootstrapcdm.com/bootstrap/3.3.2/js/bootstrap.min.js"%>
 
-		<%= csrf_meta_tags %>
-	</head>
-	<!--<body>-->
+<%= csrf_meta_tags %>
+</head>
+<!--<body>-->
 
-	<div class="container">
-		<div class="pull-right">
-			<% if user_signed_in? %>
-			<%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary btn-sm" %><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-danger btn-sm" %>
-			<% end %>
+<body>
+
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<ul class="nav navbar-nav navbar-right">
+				<% if user_signed_in? %>
+				<li><%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary btn-sm" %></li>
+				<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-danger btn-sm" %></li>
+				</ul>
+				<% end %>
+			</div>
+	
+	<%= yield %>
 		</div>
-
-		<%= yield %>
-	</div>
-
+	</nav>
+</body>
 </html>

@@ -1,0 +1,23 @@
+<h1>Places I would like to visit and mark off my bucket list.</h1>
+
+
+
+<p>I love to travel and have not recently been able to do any type of what I would consider real traveling with the exception to Myrtle Beach for a mini-vaction.</p>
+
+<p>Some day I will visit: </p>
+
+<!-- <% @norwaypics.each do |image| %>
+  <p><%= image_tag image, class: "img-responsive", width: "400" %></p><% end %>
+-->
+
+    <ul>
+        <% @countries.each do |country| %> <!-- No equals on this loop-->
+            <li><%= country %></li>
+
+        <% end %>
+
+    </ul>
+
+<footer>
+    Created by Kelly M Curtis 2015
+</footer>
